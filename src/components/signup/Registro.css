@@ -1,0 +1,30 @@
+.registro h2 {
+    width: 100%;
+    margin-left: 10px;
+    padding: 13px;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    height: 120px;
+    background-image: url("https://images.pexels.com/photos/395082/pexels-photo-395082.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+    background-size: cover;
+    background-position: center;
+    font-weight: bold;
+    color: white;
+
+}
+.registro2{
+
+    position: absolute;
+    left: 360px;
+}
+
+.register{
+
+  position: relative;
+  top: 70px;
+  border-style: solid;
+
+border: 1px solid #eeeeee;
+
+}
