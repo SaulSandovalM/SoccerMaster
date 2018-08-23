@@ -6,7 +6,6 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
-import TorneoForm from "./TorneoForm";
 import  './Torneo.css';
 
 class TableContainer1 extends Component{
@@ -102,25 +101,6 @@ class TableContainer1 extends Component{
           >
             <ContentAdd />
           </FloatingActionButton>
-
-          <Dialog
-            contentStyle={{width:350}}
-            title="Agregar nuevo"
-            actions={actions}
-            modal={false}
-            open={openForm}
-            onRequestClose={this.closeForm}
-          >
-
-          <TorneoForm
-            handleDate={this.handleDate}
-            newItem={newItem}
-            handleTipo={this.handleTipo}
-            handleSub={this.handleSub}
-            partido={this.partido}
-            onChange={this.onChange} />
-
-          </Dialog>
         </div>
       );
   }

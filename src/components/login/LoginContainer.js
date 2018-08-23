@@ -28,7 +28,7 @@ class LoginContainer extends Component {
     console.log(user.email + user.password);
     this.props.usuarioActions.iniciarSesion(user)
     .then( () => {
-        this.props.history.push('/');
+        this.props.history.push('/torneos');
     });
   };
 

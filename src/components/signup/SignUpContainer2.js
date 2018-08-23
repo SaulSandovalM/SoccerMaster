@@ -10,7 +10,7 @@ const containerStyle = {
     width:'100%'
 };
 
-class SignUpContainer extends Component {
+class SignUpContainer2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,7 +47,7 @@ class SignUpContainer extends Component {
         const {newUser} = this.state;
         return (
             <div className="registro" style={containerStyle}>
-              <h2>REGISTRO DE UN NUEVO ENTRENADOR</h2>
+              <h2>REGISTRO DE UN NUEVO ARBITRO</h2>
 <div className='registro2'>
                 <SignUpComponent
                     newUser={newUser}
@@ -72,4 +72,4 @@ function mapDispatchToProps(dispatch) {
         usuarioActions: bindActionCreators(usuarioActions,dispatch)
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps) (SignUpContainer);
+export default connect(mapStateToProps,mapDispatchToProps) (SignUpContainer2);

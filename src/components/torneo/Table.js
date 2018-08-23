@@ -13,13 +13,6 @@ const columns = [
     key: "names",
   },
   {
-    title: 'Fecha',
-    dataIndex: 'fecha',
-    sorter: (a, b) => a.fecha - b.fecha,
-    key: 'fecha',
-    render: fecha => <span>{moment(fecha).format('LL')}</span>
-  },
-  {
     title: 'Eliminar',
     key: 'action',
     render: (text, record) => (
@@ -32,19 +25,6 @@ const columns = [
       </span>
     ),
   },
-  {
-    title: 'Equipos del torneo',
-    key: 'action',
-    render: (text, record) => (
-      <span>
-        <span className="ant-divider" />
-        <Link to={"/equipos-rey"}>
-          <a style={{color:'#389349'}}>Ver equipos</a>
-        </Link>
-        <span className="ant-divider" />
-      </span>
-    ),
-  }
 ];
 
 const borrarItem = (r) => {
@@ -55,30 +35,24 @@ const borrarItem = (r) => {
   message.warning("Se ha borrado la liga");
 };
 
-let total = 0;
-const footer = () => 'Total: ' + total;
 const expandedRowRender = record => <p>{record.equipo}</p>;
 const title = () => '';
 const showHeader = true;
 const scroll = { y: 240 };
+
 class ShowTable extends Component{
   state = {
     bordered: false,
     //loading: false,
-    pagination: true,
+    pagination: false,
     size: 'default',
     expandedRowRender,
     title,
     showHeader,
-    // footer,
-    rowSelection: {},
-    scroll: undefined,
-    total:0
   };
 
   componentWillMount(){}
 
-  footer = () => {return "el foot"};
   render(){
     const {data, loading} = this.props;
     return(

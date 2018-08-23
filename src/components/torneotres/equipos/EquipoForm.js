@@ -4,89 +4,67 @@ import DatePicker from 'material-ui/DatePicker';
 import FileUpload from './FileUpload';
 import './Equipo.css';
 
-
-
-
-
 class EquipoForm extends Component{
-
-
-
-
-
-    render(){
-
-        const {newItem} = this.props;
-        return(
-            <div className="formulario" >
-                <div className={"formulario-dos"}>
-                <DatePicker
-                    autoOk={true}
-                    value={newItem.fecha}
-                    onChange={this.props.handleDate}
-                    hintText="Fecha del registro" />
-
-                <TextField
-                    value={newItem.equiponame}
-                    type="text"
-                    name="equiponame"
-                    hintText="Pachuca"
-                    floatingLabelText="Nombre del equipo"
-                    onChange={this.props.onChange}
-                />
-                <p> Logo</p>
-
-                <FileUpload/>
-                <hr className={"line-equipos"}/>
-
-                <p>Agregar jugadores</p>
-
-            <div className={"formulario-tres"}>
+  render(){
+    const {newItem} = this.props;
+    return(
+      <div className="formulario" >
+        <div className={"formulario-dos"}>
+          <DatePicker
+            autoOk={true}
+            value={newItem.fecha}
+            onChange={this.props.handleDate}
+            hintText="Fecha del registro" />
+          <TextField
+            value={newItem.equiponame}
+            type="text"
+            name="equiponame"
+            hintText="Pachuca"
+            floatingLabelText="Nombre del equipo"
+            onChange={this.props.onChange}
+          />
+          <p> Logo</p>
+          <FileUpload/>
+          <hr className={"line-equipos"}/>
+          <p>Agregar jugadores</p>
+          <div className={"formulario-tres"}>
                 {/* arquero*/}
-                                <TextField
-                                    value={newItem.namearquero}
-                                    type="text"
-                                    name="namearquero"
-                                    hintText="Juan Pérez"
-                                    floatingLabelText="Nombre del Arquero"
-                                    onChange={this.props.onChange}
-                                    />
-                                    <TextField
-                                        value={newItem.numberarquero}
-                                        type="number"
-                                        name="numberarquero"
-                                        hintText="1"
-                                        floatingLabelText="Número del Arquero"
-                                        onChange={this.props.onChange}
-                                    />
-
-                                <TextField
-                                    value={newItem.arquerodate}
-                                    type="date"
-                                    name="arquerodate"
-                                    floatingLabelText="Fecha de Nacimiento"
-                                    onChange={this.props.onChange}
-                                />
-
-
-
-                    <FileUpload/>
-
-                <hr className={"line-equipos"}/>
-
+            <TextField
+              value={newItem.namearquero}
+              type="text"
+              name="namearquero"
+              hintText="Juan Pérez"
+              floatingLabelText="Nombre del Arquero"
+              onChange={this.props.onChange}
+            />
+            <TextField
+              value={newItem.numberarquero}
+              type="number"
+              name="numberarquero"
+              hintText="1"
+              floatingLabelText="Número del Arquero"
+              onChange={this.props.onChange}
+            />
+            <TextField
+                value={newItem.arquerodate}
+                type="date"
+                name="arquerodate"
+                floatingLabelText="Fecha de Nacimiento"
+                onChange={this.props.onChange}
+            />
+            <FileUpload/>
+            <hr className={"line-equipos"}/>
                 {/* defensas 4*/}
-
-                        <p>Defensas</p>
-
+            <p>Defensas</p>
                 {/* defensa 1*/}
-                                    <TextField
-                                        value={newItem.defensauno}
-                                        type="text"
-                                        name="defensauno"
-                                        hintText="Juan Pérez"
-                                        floatingLabelText="Nombre del Defensa"
-                                        onChange={this.props.onChange}
-                                    />
+            <TextField
+              value={newItem.defensauno}
+              type="text"
+              name="defensauno"
+              hintText="Juan Pérez"
+              floatingLabelText="Nombre del Defensa"
+              onChange={this.props.onChange}
+            />
                                         <TextField
                                             value={newItem.numberdefensauno}
                                             type="number"
@@ -257,7 +235,7 @@ class EquipoForm extends Component{
                                     <TextField
                                         value={newItem.mediotres}
                                         type="text"
-                                        name="mediodos"
+                                        name="mediotres"
                                         hintText="Juan Pérez"
                                         floatingLabelText="Nombre del Medio"
                                         onChange={this.props.onChange}

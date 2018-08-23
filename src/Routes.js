@@ -7,6 +7,7 @@ import Resumen from './components/resumen/Resumen';
 import Politicas from "./components/footer/Politicas";
 import LoginContainer from "./components/login/LoginContainer";
 import SignUpContainer from "./components/signup/SignUpContainer";
+import SignUpContainer2 from "./components/signup/SignUpContainer2";
 import TorneoHome from "./components/torneos/TorneoHome";
 import TableContainer1 from "./components/torneo/TableContainer1";
 import TableContainer2 from "./components/torneodos/TableContainer2";
@@ -18,8 +19,8 @@ import TableContainer7 from "./components/torneosiete/TableContainer7";
 import TableContainer8 from "./components/torneoocho/TableContainer8";
 import TableContainer9 from "./components/torneonueve/TableContainer9";
 import PrivateRoute from "./PrivateRoute";
-import  DocumentHome from "./components/document/MyApp";
-import  GoleadorContainer from './components/goleador/GoleadorContainer';
+import DocumentHome from "./components/document/MyApp";
+import GoleadorContainer from './components/goleador/GoleadorContainer';
 //equipos rutas
 import EquipoTorneotres from "./components/torneotres/equipos/EquipoContainer";
 import Equipo from './components/torneodos/equipos/EquipoContainer';
@@ -30,6 +31,7 @@ const Routes = () => (
     <Route exact path="/" component={LoginContainer} />
     <Route path="/login" component={LoginContainer} />
     <Route path="/signup" component={SignUpContainer} />
+    <Route path="/signup2" component={SignUpContainer2} />
     <Route path="/caja" component={Caja} />
     <PrivateRoute path="/resumen" component={Resumen} />
     <PrivateRoute path="/clientes" component={Cliente} />

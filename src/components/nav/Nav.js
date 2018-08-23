@@ -83,7 +83,22 @@ class Nav extends Component {
           to="/signup">
           <MenuItem
             style={active?styles.active:null}
-            primaryText="Registrar Usuario"
+            primaryText="Registrar Entrenador"
+            leftIcon={<Invent />} />
+        </NavLink>
+
+        <NavLink
+          onClick={this.props.toogleDrawer}
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: 'bold',
+          }}
+          //isActive={()=>this.oddEvent(1)}
+          exact
+          to="/signup2">
+          <MenuItem
+            style={active?styles.active:null}
+            primaryText="Registrar Arbitro"
             leftIcon={<Invent />} />
         </NavLink>
 
