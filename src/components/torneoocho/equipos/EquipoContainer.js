@@ -84,7 +84,7 @@ class EquipoContainer extends Component{
 
     return(
       <div className='torneo'>
-        <h2>Torneo Copa de Rey</h2>
+        <h2>Torneo Copa de Sudamericana</h2>
         <Aviso className='aviso'/>
         <ShowTable loading={loading} data={data} />
         <FloatingActionButton
