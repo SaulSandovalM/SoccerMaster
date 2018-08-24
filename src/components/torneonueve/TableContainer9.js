@@ -6,7 +6,6 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
-import TorneoForm from "./TorneoForm";
 import  './Torneo.css';
 
 class TableContainer9 extends Component{

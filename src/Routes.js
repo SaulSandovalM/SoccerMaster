@@ -1,8 +1,5 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Caja from './components/caja/TableContainer';
-import Cliente from './components/cliente/TableCliente';
-import Resumen from './components/resumen/Resumen';
 //rutas sistemas
 import Politicas from "./components/footer/Politicas";
 import LoginContainer from "./components/login/LoginContainer";
@@ -32,9 +29,6 @@ const Routes = () => (
     <Route path="/login" component={LoginContainer} />
     <Route path="/signup" component={SignUpContainer} />
     <Route path="/signup2" component={SignUpContainer2} />
-    <Route path="/caja" component={Caja} />
-    <PrivateRoute path="/resumen" component={Resumen} />
-    <PrivateRoute path="/clientes" component={Cliente} />
     <PrivateRoute path="/torneos" component={TorneoHome} />
     <Route path="/politicas" component={Politicas} />
     <Route path="/goleadores" component={GoleadorContainer} />

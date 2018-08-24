@@ -3,7 +3,7 @@ import './App.css';
 import Routes from './Routes';
 import Nav from './components/nav/Nav';
 import NavBar from "./components/nav/NavBar";
-import { ParallaxProvider } from 'react-scroll-parallax';
+import {ParallaxProvider} from 'react-scroll-parallax';
 
 class App extends Component {
   state = {
