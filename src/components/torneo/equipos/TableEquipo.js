@@ -21,21 +21,6 @@ const columns = [
   }
 ];
 
-const expandedRowRender = record =>
-  <div>
-    <p> Arquero: {record.namearquero} | Nacimiento: {record.arquerodate} | Número: {record.numberarquero}  </p>
-    <p> Defensa: {record.defensauno}  | Nacimiento: {record.defensaunodate} | Número:{record.numberdefensauno} </p>
-    <p> Defensa: {record.defensados}  | Nacimiento: {record.defensadosdate} | Número:{record.numberdefensados}</p>
-    <p> Defensa{record.defensatres}  | Nacimiento: {record.defensatresdate} | Número:{record.numberdefensatres}</p>
-    <p> Defensa: {record.defensacuatro}  | Nacimiento: {record.defensacuatrodate} | Número:{record.numberdefensacuatro}</p>
-    <p> Medio: {record.mediouno}  | Nacimiento: {record.mediounodate} | Número:{record.numberdefensatres}</p>
-    <p> Medio: {record.mediodos}  | Nacimiento: {record.mediodosdate}  | Número:{record.numbermediodos}</p>
-    <p> Medio: {record.mediotres}  | Nacimiento: {record.mediotresdate} | Número:{record.numbermediotres}</p>
-    <p> Medio: {record.mediocuatro}  | Nacimiento: {record.mediocuatrodate}  Número:{record.numbermediocuatro}</p>
-    <p> Delantero: {record.delanterouno}  | Nacimiento: {record.delanterounodate}  Número:{record.numberdelanterouno}</p>
-    <p> Delantero: {record.delanterodos}  | Nacimiento: {record.delanterodosdate} Número:{record.numberdelanterodos}</p>
-  </div>;
-
 const title = () => '';
 const showHeader = true;
 const scroll = { y: 240 };
@@ -45,7 +30,6 @@ class ShowTable extends Component{
     bordered: false,
     pagination: false,
     size: 'default',
-    expandedRowRender,
     title,
     showHeader,
   };
@@ -58,27 +42,13 @@ class ShowTable extends Component{
       <div>
         <QueueAnim>
           <Table
-            bordered={true}
+            bordered={false}
             style={{minWidth:'1000px'}}
             {...this.state}
             loading={loading}
             columns={columns}
             dataSource={data}
-            expandedRowRender={record =>
-              <div className={""}>
-                <p> Arquero: {record.namearquero} | Nacimiento: {record.arquerodate} | Número: {record.numberarquero}  </p>
-                <p> Defensa: {record.defensauno}  | Nacimiento: {record.defensaunodate} | Número:{record.numberdefensauno} </p>
-                <p> Defensa: {record.defensados}  | Nacimiento: {record.defensadosdate} | Número:{record.numberdefensados}</p>
-                <p> Defensa: {record.defensatres}  | Nacimiento: {record.defensatresdate} | Número:{record.numberdefensatres}</p>
-                <p> Defensa: {record.defensacuatro}  | Nacimiento: {record.defensacuatrodate} | Número:{record.numberdefensacuatro}</p>
-                <p> Medio: {record.mediouno}  | Nacimiento: {record.mediounodate} | Número:{record.numberdefensatres}</p>
-                <p> Medio: {record.mediodos}  | Nacimiento: {record.mediodosdate}  | Número:{record.numbermediodos}</p>
-                <p> Medio: {record.mediotres}  | Nacimiento: {record.mediotresdate} | Número:{record.numbermediotres}</p>
-                <p> Medio: {record.mediocuatro}  | Nacimiento: {record.mediocuatrodate}  | Número:{record.numbermediocuatro}</p>
-                <p> Delantero: {record.delanterouno}  | Nacimiento: {record.delanterounodate} |  Número:{record.numberdelanterouno}</p>
-                <p> Delantero: {record.delanterodos}  | Nacimiento: {record.delanterodosdate}| Número:{record.numberdelanterodos}</p>
-              </div>
-            }/>
+          />
         </QueueAnim>
       </div>
     );

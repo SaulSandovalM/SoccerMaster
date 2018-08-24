@@ -28,7 +28,7 @@ class EquipoForm extends Component{
           <hr className={"line-equipos"}/>
           <p>Agregar jugadores</p>
           <div className={"formulario-tres"}>
-                {/* arquero*/}
+            {/* arquero*/}
             <TextField
               value={newItem.namearquero}
               type="text"
@@ -46,17 +46,17 @@ class EquipoForm extends Component{
               onChange={this.props.onChange}
             />
             <TextField
-                value={newItem.arquerodate}
-                type="date"
-                name="arquerodate"
-                floatingLabelText="Fecha de Nacimiento"
-                onChange={this.props.onChange}
+              value={newItem.arquerodate}
+              type="date"
+              name="arquerodate"
+              floatingLabelText="Fecha de Nacimiento"
+              onChange={this.props.onChange}
             />
             <FileUpload/>
             <hr className={"line-equipos"}/>
-                {/* defensas 4*/}
+            {/* defensas 4*/}
             <p>Defensas</p>
-                {/* defensa 1*/}
+            {/* defensa 1*/}
             <TextField
               value={newItem.defensauno}
               type="text"
@@ -65,50 +65,47 @@ class EquipoForm extends Component{
               floatingLabelText="Nombre del Defensa"
               onChange={this.props.onChange}
             />
-                                        <TextField
-                                            value={newItem.numberdefensauno}
-                                            type="number"
-                                            name="numberdefensauno"
-                                            hintText="1"
-                                            floatingLabelText="Número del Defensa"
-                                            onChange={this.props.onChange}
-                                        />
-                                    <TextField
-                                        value={newItem.defensaunodate}
-                                        type="date"
-                                        name="defensaunodate"
-                                        floatingLabelText="Fecha de Nacimiento"
-                                        onChange={this.props.onChange}
-                                    />
-                                        <FileUpload/>
-
-                {/* defensa 2*/}
-
-
-                                        <TextField
-                                            value={newItem.defensados}
-                                            type="text"
-                                            name="defensados"
-                                            hintText="Juan Pérez"
-                                            floatingLabelText="Nombre del Defensa"
-                                            onChange={this.props.onChange}
-                                        />
-                                            <TextField
-                                                value={newItem.numberdefensados}
-                                                type="number"
-                                                name="numberdefensados"
-                                                hintText="1"
-                                                floatingLabelText="Número del Defensa"
-                                                onChange={this.props.onChange}
-                                            />
-                                        <TextField
-                                            value={newItem.defensadosdate}
-                                            type="date"
-                                            name="defensadosdate"
-                                            floatingLabelText="Fecha de Nacimiento"
-                                            onChange={this.props.onChange}
-                                        />
-                                        <FileUpload/>
+            <TextField
+              value={newItem.numberdefensauno}
+              type="number"
+              name="numberdefensauno"
+              hintText="1"
+              floatingLabelText="Número del Defensa"
+              onChange={this.props.onChange}
+            />
+            <TextField
+              value={newItem.defensaunodate}
+              type="date"
+              name="defensaunodate"
+              floatingLabelText="Fecha de Nacimiento"
+              onChange={this.props.onChange}
+            />
+            <FileUpload/>
+            {/* defensa 2*/}
+            <TextField
+              value={newItem.defensados}
+              type="text"
+              name="defensados"
+              hintText="Juan Pérez"
+              floatingLabelText="Nombre del Defensa"
+              onChange={this.props.onChange}
+            />
+            <TextField
+              value={newItem.numberdefensados}
+              type="number"
+              name="numberdefensados"
+              hintText="1"
+              floatingLabelText="Número del Defensa"
+              onChange={this.props.onChange}
+            />
+            <TextField
+                value={newItem.defensadosdate}
+                type="date"
+                name="defensadosdate"
+                floatingLabelText="Fecha de Nacimiento"
+                onChange={this.props.onChange}
+            />
+            <FileUpload/>
 
                 {/* defensa 3*/}
 

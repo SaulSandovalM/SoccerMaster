@@ -6,7 +6,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
-import  './Torneo.css';
+import './Torneo.css';
 
 class TableContainer1 extends Component{
   state = {

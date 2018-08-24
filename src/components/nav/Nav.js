@@ -63,6 +63,23 @@ class Nav extends Component {
             fontWeight: 'bold',
           }}
           //isActive={()=>this.oddEvent(1)}
+          exact
+          to="/torneosAdmin">
+            <MenuItem
+              style={active?styles.active:null}
+              primaryText="Equipos"
+              leftIcon={<HomeIcon/>}
+              //onClick={()=>this.changeName('Equipos')}
+            />
+          </NavLink>
+
+        <NavLink
+          onClick={this.props.toogleDrawer}
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: 'bold',
+          }}
+          //isActive={()=>this.oddEvent(1)}
           to="/torneos">
           <MenuItem
             style={active?styles.active:null}
