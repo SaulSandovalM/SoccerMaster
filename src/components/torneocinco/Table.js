@@ -58,10 +58,6 @@ class ShowTable extends Component{
     expandedRowRender,
     title,
     showHeader,
-    // footer,
-    rowSelection: {},
-    scroll: undefined,
-    total:0
   };
 
   componentWillMount(){}

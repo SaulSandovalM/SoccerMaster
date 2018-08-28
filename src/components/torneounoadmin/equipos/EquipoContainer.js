@@ -8,14 +8,27 @@ import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
 import EquipoForm from "./EquipoForm";
 import Aviso from "./Aviso";
-import  './Equipo.css';
+import './Equipo.css';
+import Nav from '../../nav/Nav';
+import NavBar from '../../nav/NavBar';
 
 class EquipoContainer extends Component{
+  openDrawer = () => {
+    let {showDrawer} = this.state;
+    showDrawer = !showDrawer;
+    this.setState({showDrawer});
+  };
+
+  forceClosingDrawer = () => {
+    this.setState({showDrawer:false})
+  };
+
   state = {
     data:[],
     loading:true,
     openForm:false,
-    newItem:{captura:''}
+    newItem:{captura:''},
+    showDrawer : false
   };
 
   componentWillMount(){
@@ -83,27 +96,31 @@ class EquipoContainer extends Component{
     const {data, loading, openForm, newItem} = this.state;
 
     return(
-      <div className='torneo'>
-        <h2>Torneo Copa de Rey</h2>
-        <Aviso className='aviso'/>
-        <ShowTable loading={loading} data={data} />
-        <FloatingActionButton
-          style={styles.float}
-          onClick={this.openForm}>
-          <ContentAdd />
-        </FloatingActionButton>
-        <Dialog
-          contentStyle={{width:520}}
-          title="Agregar nuevo"
-          actions={actions}
-          modal={false}
-          open={openForm}
-          onRequestClose={this.closeForm}>
-          <EquipoForm
-            handleDate={this.handleDate}
-            newItem={newItem}
-            onChange={this.onChange}  className={"formu"}/>
-        </Dialog>
+      <div>
+        <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+        <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
+        <div className='torneo'>
+          <h2>Torneo Copa de Rey</h2>
+          <Aviso className='aviso'/>
+          <ShowTable loading={loading} data={data} />
+          <FloatingActionButton
+            style={styles.float}
+            onClick={this.openForm}>
+            <ContentAdd />
+          </FloatingActionButton>
+          <Dialog
+            contentStyle={{width:520}}
+            title="Agregar nuevo"
+            actions={actions}
+            modal={false}
+            open={openForm}
+            onRequestClose={this.closeForm}>
+            <EquipoForm
+              handleDate={this.handleDate}
+              newItem={newItem}
+              onChange={this.onChange}  className={"formu"}/>
+          </Dialog>
+        </div>
       </div>
     );
   }

@@ -7,13 +7,26 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
 import './Torneo.css';
+import Nav from '../nav/Nav';
+import NavBar from '../nav/NavBar';
 
 class TableContainer1 extends Component{
   state = {
     data:[],
     loading:true,
     openForm:false,
-    newItem:{captura:''}
+    newItem:{captura:''},
+    showDrawer : false
+  };
+
+  openDrawer = () => {
+    let {showDrawer} = this.state;
+    showDrawer = !showDrawer;
+    this.setState({showDrawer});
+  };
+
+  forceClosingDrawer = () => {
+    this.setState({showDrawer:false})
   };
 
   componentWillMount(){
@@ -91,7 +104,10 @@ class TableContainer1 extends Component{
       />,
     ];
     const {data, loading, openForm, newItem} = this.state;
-      return(
+    return(
+      <div>
+        <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+        <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
         <div className='torneo'>
           <h2>Torneo Copa del Rey</h2>
           <ShowTable loading={loading} data={data} />
@@ -102,7 +118,8 @@ class TableContainer1 extends Component{
             <ContentAdd />
           </FloatingActionButton>
         </div>
-      );
+      </div>
+    );
   }
 }
 

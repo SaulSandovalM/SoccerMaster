@@ -3,11 +3,30 @@ import {Card, Col, Row, Button, message, Popconfirm, Table, Icon} from 'antd';
 import './Torneo.css';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import {Link} from 'react-router-dom';
+import Nav from '../nav/Nav';
+import NavBar from '../nav/NavBar';
 
 class TorneoEntrenador extends Component {
+  state = {
+    showDrawer : false
+  };
+
+  openDrawer = () => {
+    let {showDrawer} = this.state;
+    showDrawer = !showDrawer;
+    this.setState({showDrawer});
+  };
+
+  forceClosingDrawer = () => {
+    this.setState({showDrawer:false})
+  };
+
   render() {
     return (
-      <div className={"torneohome"} style={{padding: '30px' , width:'1300px'}}>
+      <div>
+      <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+      <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
+      <div className={"torneohome"}>
         <div className="catalogo-back" style={{padding: '30px' , width:'900px'}}>
 
           <Row gutter={16}>
@@ -145,6 +164,7 @@ class TorneoEntrenador extends Component {
               </Col>
             </Row>
           </div>
+        </div>
         </div>
     );
   }

@@ -7,15 +7,28 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
 import  './Torneo.css';
+import Nav from '../nav/Nav';
+import NavBar from '../nav/NavBar';
 
 class TableContainer9 extends Component{
   state = {
     data:[],
     loading:true,
     openForm:false,
-    newItem:{captura:''}
+    newItem:{captura:''},
+    showDrawer : false
   };
 
+  openDrawer = () => {
+    let {showDrawer} = this.state;
+    showDrawer = !showDrawer;
+    this.setState({showDrawer});
+  };
+
+  forceClosingDrawer = () => {
+    this.setState({showDrawer:false})
+  };
+  
   componentWillMount(){
     firebase.database().ref('torneonueve').on('child_added',s=>{
       const {data} = this.state;
@@ -80,12 +93,16 @@ class TableContainer9 extends Component{
     ];
     const {data, loading, openForm, newItem} = this.state;
     return(
-      <div className='torneo'>
-        <h2>Torneo Copa Femenil</h2>
-        <ShowTable loading={loading} data={data} />
-        <FloatingActionButton style={styles.float} onClick={this.openForm}>
-          <ContentAdd />
-        </FloatingActionButton>
+      <div>
+        <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+        <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
+        <div className='torneo'>
+          <h2>Torneo Copa Femenil</h2>
+          <ShowTable loading={loading} data={data} />
+          <FloatingActionButton style={styles.float} onClick={this.openForm}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </div>
       </div>
     );
   }

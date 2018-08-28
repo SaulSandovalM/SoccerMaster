@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 class TorneoUno extends Component {
   render() {
     return (
-      <div className={"torneohome"} style={{padding: '30px' , width:'1300px'}}>
+      <div className={"torneohome"}>
         <div className="catalogo-back" style={{padding: '30px' , width:'900px'}}>
           <Row gutter={16}>
             <Col span={8} style={{backgroundColor:'transparent', borderColor:'none'}}>

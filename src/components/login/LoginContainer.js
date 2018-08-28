@@ -6,12 +6,31 @@ import {connect} from 'react-redux';
 import  Footer from '../footer/Footer';
 import * as usuarioActions from '../../actions/usuarioActions';
 import toastr from 'toastr';
+import Nav from '../nav/Nav';
+import NavBar from '../nav/NavBar';
 
 const containerStyle = {
-  height: '80vh'
+  height: '80vh',
+  display: 'flex',
+  alingItems: 'center',
+  justifyContent: 'center',
 };
 
 class LoginContainer extends Component {
+  state = {
+    showDrawer : false
+  };
+
+  openDrawer = () => {
+    let {showDrawer} = this.state;
+    showDrawer = !showDrawer;
+    this.setState({showDrawer});
+  };
+
+  forceClosingDrawer = () => {
+    this.setState({showDrawer:false})
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -41,6 +60,8 @@ class LoginContainer extends Component {
   render(){
     return(
       <div>
+        <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+        <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
         <div className="back-login">
           <h1>Bienvenido a Soccer Master <br/> la mejor aplicación <br/> de fútbol Amateur</h1>
           <div className="App" style={containerStyle}>

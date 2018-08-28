@@ -6,13 +6,26 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
+import Nav from '../nav/Nav';
+import NavBar from '../nav/NavBar';
 
 class TableContainer2 extends Component{
   state = {
     data:[],
     loading:true,
     openForm:false,
-    newItem:{ captura:''}
+    newItem:{ captura:''},
+    showDrawer : false
+  };
+
+  openDrawer = () => {
+    let {showDrawer} = this.state;
+    showDrawer = !showDrawer;
+    this.setState({showDrawer});
+  };
+
+  forceClosingDrawer = () => {
+    this.setState({showDrawer:false})
   };
 
   componentWillMount(){
@@ -82,15 +95,19 @@ class TableContainer2 extends Component{
     ];
     const {data, loading, openForm, newItem} = this.state;
     return(
-      <div className='torneo'>
-        <h2>Torneo Copa América</h2>
-        <ShowTable loading={loading} data={data} />
-        <FloatingActionButton
-          style={styles.float}
-          onClick={this.openForm}
-        >
-          <ContentAdd />
-        </FloatingActionButton>
+      <div>
+        <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+        <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
+        <div className='torneo'>
+          <h2>Torneo Copa América</h2>
+          <ShowTable loading={loading} data={data} />
+          <FloatingActionButton
+            style={styles.float}
+            onClick={this.openForm}
+          >
+            <ContentAdd />
+          </FloatingActionButton>
+        </div>
       </div>
     );
   }
@@ -103,6 +120,5 @@ const styles = {
     left:'1100px',
   }
 };
-
 
 export default TableContainer2;

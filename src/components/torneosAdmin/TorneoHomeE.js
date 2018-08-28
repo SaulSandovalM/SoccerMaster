@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import TorneoUno from './TorneosEntrenador';
+import TorneosAdmin from './TorneosEntrenador';
 import './Torneo.css';
 
 class TorneoHomeE extends Component {
   render() {
     return (
       <div>
-        <TorneoUno/>
+        <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+        <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
+        <TorneosAdmin/>
       </div>
     );
   }

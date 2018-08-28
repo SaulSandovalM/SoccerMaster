@@ -71,24 +71,18 @@ class ShowTable extends Component{
   state = {
     bordered: false,
     //loading: false,
-    pagination: false,
+    pagination: true,
     size: 'default',
     title,
     showHeader,
-    // footer,
-    rowSelection: {},
-    scroll: undefined,
-    total:0
   };
 
-  componentWillMount(){
-
-  }
+  componentWillMount(){}
 
   render(){
     const {data, loading} = this.props;
     return(
-      <div>
+      <div style={{width: '90%', marginLeft: '5%'}}>
         <QueueAnim>
           <Table
             bordered={true}
