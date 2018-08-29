@@ -13,13 +13,6 @@ const columns = [
     key: "names",
   },
   {
-    title: 'Fecha',
-    dataIndex: 'fecha',
-    sorter: (a, b) => a.fecha - b.fecha,
-    key: 'fecha',
-    render: fecha => <span>{moment(fecha).format('LL')}</span>
-  },
-  {
     title: 'Eliminar',
     key: 'action',
     render: (text, record) => (

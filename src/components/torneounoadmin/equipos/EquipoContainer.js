@@ -118,7 +118,7 @@ class EquipoContainer extends Component{
             <EquipoForm
               handleDate={this.handleDate}
               newItem={newItem}
-              onChange={this.onChange}  className={"formu"}/>
+              onChange={this.onChange} className={"formu"}/>
           </Dialog>
         </div>
       </div>

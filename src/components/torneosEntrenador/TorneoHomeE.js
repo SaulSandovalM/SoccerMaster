@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import TorneoUno from './TorneosEntrenador';
 import './Torneo.css';
-import Nav from '../nav/Nav';
-import NavBar from '../nav/NavBar';
+import Nav2 from '../nav/Nav2';
+import NavBar2 from '../nav/NavBar2';
 
 class TorneoHomeE extends Component {
   state = {
@@ -21,9 +21,9 @@ class TorneoHomeE extends Component {
 
   render() {
     return (
-      <div className="perro">
-        <NavBar forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
-        <Nav open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
+      <div>
+        <NavBar2 forceClosingDrawer={this.forceClosingDrawer} openDrawer={this.openDrawer}/>
+        <Nav2 open={this.state.showDrawer} toogleDrawer={this.openDrawer}/>
         <TorneoUno/>
       </div>
     );

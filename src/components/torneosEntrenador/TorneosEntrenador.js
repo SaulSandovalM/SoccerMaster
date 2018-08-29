@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 class TorneoEntrenador extends Component {
   render() {
     return (
-      <div className={"torneohome"} style={{padding: '30px' , width:'1300px'}}>
+      <div className={"torneohome"}>
       <h1 style={{color: 'white'}}>Selecciona a que torneo pertenecerá tu equipo</h1>
         <div className="catalogo-back" style={{padding: '30px' , width:'900px'}}>
 

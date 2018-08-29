@@ -47,15 +47,6 @@ class SignUpContainer2 extends Component {
     this.setState({newUser});
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const user = Object.assign({},this.state.newUser);
-    this.props.usuarioActions.registrarEIniciarSesion(user)
-      .then( r => {
-          this.props.history.push('/');
-      });
-  };
-
   render() {
     const {newUser} = this.state;
     return (
@@ -68,7 +59,6 @@ class SignUpContainer2 extends Component {
           <SignUpComponent
             newUser={newUser}
             onChange={this.handleChangeNewUser}
-            onSubmit={this.handleSubmit}
           />
         </div>
       </div>

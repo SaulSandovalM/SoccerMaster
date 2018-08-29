@@ -1,16 +1,13 @@
 .formu{
   width:700px;
-  background: red;
 }
 .formulario{
   max-width:450px;
   height: 900px;
-  overflow: scroll;
 }
 .formulario-dos{
   max-width:450px;
   height:1200px;
-  overflow: scroll;
 }
 .line-equipos{
   margin: 15px 0;
