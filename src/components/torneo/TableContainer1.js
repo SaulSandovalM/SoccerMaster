@@ -68,7 +68,7 @@ class TableContainer1 extends Component{
 
   saveItem = () => {
     let newItem = this.state.newItem;
-    firebase.database().ref('CopaRey')
+    firebase.database().ref('CopaRey/')
       .push(newItem)
       .then(r=>message.success("Se ha guardado con éxito"))
       .catch(e=>message.error("Algo malo pasó, no se pudo guardar"));

@@ -34,7 +34,7 @@ const borrarItem = (r) => {
   message.warning("Se ha borrado la liga");
 };
 
-const expandedRowRender = record => <p>{record.partido}</p>;
+const expandedRowRender = record => <p>{record.equipo1}</p>;
 const title = () => '';
 const showHeader = true;
 const scroll = { y: 240 };
@@ -65,11 +65,16 @@ class ShowTable extends Component{
             columns={columns}
             dataSource={data}
             expandedRowRender={record =>
-              <p>{record.partido}<br/>{record.partido1}<br/>{record.partido2}<br/>{record.partido3}<br/>
-              {record.partido4}<br/>{record.partido5}<br/>{record.partido6}<br/>{record.partido7}<br/>
-              {record.partido8}<br/>{record.partido9}<br/>{record.partido10}<br/>{record.partido11}<br/>
-              {record.partido12}<br/>{record.partido13}<br/>{record.partido14}<br/>{record.partido15}<br/>
-              {record.partido16}<br/>{record.partido17}<br/>{record.partido18}<br/>{record.partido19}</p>}
+              <p>{record.equipo1} vs {record.equipo2}<br/>{record.equipo3} vs {record.equipo4}
+              <br/>{record.equipo5} vs {record.equipo6}<br/>{record.equipo7} vs {record.equipo8}
+              <br/>{record.equipo9} vs {record.equipo10}<br/>{record.equipo11} vs {record.equipo12}
+              <br/>{record.equipo13} vs {record.equipo14}<br/>{record.equipo15} vs {record.equipo16}
+              <br/>{record.equipo17} vs {record.equipo18}<br/>{record.equipo19} vs {record.equipo20}
+              <br/>{record.equipo21} vs {record.equipo22}<br/>{record.equipo23} vs {record.equipo24}
+              <br/>{record.equipo25} vs {record.equipo26}<br/>{record.equipo27} vs {record.equipo26}
+              <br/>{record.equipo29} vs {record.equipo30}<br/>{record.equipo31} vs {record.equipo32}
+              <br/>{record.equipo33} vs {record.equipo34}<br/>{record.equipo35} vs {record.equipo36}
+              <br/>{record.equipo37} vs {record.equipo38}<br/>{record.equipo39} vs {record.equipo40}</p>}
           />
         </QueueAnim>
       </div>

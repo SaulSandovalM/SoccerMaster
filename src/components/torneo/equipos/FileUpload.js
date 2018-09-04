@@ -11,7 +11,7 @@ class FileUpload extends Component {
 
   handleOnChange (event) {
     const file = event.target.files[0]
-    const storageRef = firebase.storage().ref(`equipoliber/${file.name}`)
+    const storageRef = firebase.storage().ref(`equiposrey/${file.name}`)
     const task = storageRef.put(file)
 
     task.on('state_changed', (snapshot) => {

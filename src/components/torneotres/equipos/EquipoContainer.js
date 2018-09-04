@@ -19,14 +19,14 @@ class EquipoContainer extends Component{
   };
 
   componentWillMount(){
-    firebase.database().ref('/torneotres/equipos/teamsOro/').on('child_added',s=>{
+    firebase.database().ref('/CopaOro/equipos/teamsOro/').on('child_added',s=>{
       const {data} = this.state;
       let item = s.val();
       item["key"] = s.key;
       data.push(item);
       this.setState({data, loading:false});
     });
-    firebase.database().ref('/torneotres/equipos/teamsOro/').on('child_removed',s=>{
+    firebase.database().ref('/CopaOro/equipos/teamsOro/').on('child_removed',s=>{
       const {data} = this.state;
       let item = s.val();
       item["key"] = s.key;
@@ -65,7 +65,7 @@ class EquipoContainer extends Component{
     newItem['captura'] = Date.now();
     newItem["fecha"] = Date.parse(newItem["fecha"]);
     this.closeForm();
-    firebase.database().ref('/torneotres/equipos/teamsOro/')
+    firebase.database().ref('/CopaOro/equipos/teamsOro/')
       .push(newItem)
       .then(r=>message.success("Se ha guardado con éxito"))
       .catch(e=>message.error("Algo malo pasó, no se pudo guardar"));
@@ -102,7 +102,7 @@ class EquipoContainer extends Component{
           <EquipoForm
             handleDate={this.handleDate}
             newItem={newItem}
-            onChange={this.onChange}  className={"formu"}/>
+            onChange={this.onChange} className={"formu"}/>
         </Dialog>
       </div>
     );
