@@ -23,11 +23,6 @@ class TorneoUno extends Component {
                     </figcaption>
                   </figure>
                 </Link>
-                <span style={{flexDirection: 'row'}}>
-                  <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No" >
-                    <a style={{color:'#35a375'}}>Borrar</a>
-                  </Popconfirm>
-                </span>
               </Card>
             </Col>
 
@@ -43,11 +38,6 @@ class TorneoUno extends Component {
                     </figcaption>
                   </figure>
                 </Link>
-                <span>
-                  <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                    <a style={{color:'#35a375'}}>Borrar</a>
-                  </Popconfirm>
-                </span>
               </Card>
             </Col>
 
@@ -63,11 +53,6 @@ class TorneoUno extends Component {
                       </figcaption>
                     </figure>
                   </Link>
-                  <span>
-                    <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                      <a style={{color:'#35a375'}}>Borrar</a>
-                    </Popconfirm>
-                  </span>
                 </Card>
               </Col>
 
@@ -83,11 +68,6 @@ class TorneoUno extends Component {
                       </figcaption>
                     </figure>
                   </Link>
-                  <span>
-                    <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                      <a style={{color:'#35a375'}}>Borrar</a>
-                    </Popconfirm>
-                  </span>
                 </Card>
               </Col>
 
@@ -103,11 +83,6 @@ class TorneoUno extends Component {
                       </figcaption>
                     </figure>
                   </Link>
-                  <span>
-                    <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                      <a style={{color:'#35a375'}}>Borrar</a>
-                    </Popconfirm>
-                  </span>
                 </Card>
               </Col>
 
@@ -123,11 +98,6 @@ class TorneoUno extends Component {
                       </figcaption>
                     </figure>
                   </Link>
-                  <span>
-                    <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                      <a style={{color:'#35a375'}}>Borrar</a>
-                    </Popconfirm>
-                  </span>
                 </Card>
               </Col>
 
@@ -143,11 +113,6 @@ class TorneoUno extends Component {
                       </figcaption>
                     </figure>
                   </Link>
-                  <span>
-                    <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                      <a style={{color:'#35a375'}}>Borrar</a>
-                    </Popconfirm>
-                  </span>
                 </Card>
               </Col>
 
@@ -162,11 +127,6 @@ class TorneoUno extends Component {
                       </figcaption>
                     </figure>
                   </Link>
-                  <span>
-                    <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                      <a style={{color:'#35a375'}}>Borrar</a>
-                    </Popconfirm>
-                  </span>
                 </Card>
               </Col>
 
@@ -181,19 +141,9 @@ class TorneoUno extends Component {
                       </figcaption>
                     </figure>
                   </Link>
-                  <span>
-                    <Popconfirm title="¿Estás seguro？" okText="Sí" cancelText="No">
-                      <a style={{color:'#35a375'}}>Borrar</a>
-                    </Popconfirm>
-                  </span>
                 </Card>
               </Col>
             </Row>
-            <FloatingActionButton
-              style={styles.float}
-              onClick={this.openForm}>
-              <ContentAdd />
-            </FloatingActionButton>
           </div>
         </div>
     );

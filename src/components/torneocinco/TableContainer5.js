@@ -6,9 +6,10 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {message} from 'antd';
-import  './Torneo.css';
+import './Torneo.css';
 import Nav from '../nav/Nav';
 import NavBar from '../nav/NavBar';
+import TorneoForm from "./TorneoForm";
 
 class TableContainer5 extends Component{
   state = {
@@ -30,25 +31,27 @@ class TableContainer5 extends Component{
   };
 
   componentWillMount(){
-    firebase.database().ref('torneocinco').on('child_added',s=>{
-      const {data} = this.state;
-      let item = s.val();
-      item["key"] = s.key;
-      data.push(item);
-      this.setState({data, loading:false});
-    });
-    firebase.database().ref('torneocinco').on('child_removed',s=>{
-      const {data} = this.state;
-      let item = s.val();
-      item["key"] = s.key;
-      const datas = data.filter(i=>i.key!==item.key);
-      this.setState({data:datas});
-    })
+    firebase.database().ref('CopaAfricana')
+      .on('child_added', s=>{
+        const {data} = this.state;
+        let item = s.val();
+        item["key"] = s.key;
+        data.push(item);
+        this.setState({data, loading:false});
+      });
+    firebase.database().ref('CopaAfricana')
+      .on('child_removed', s=>{
+        const {data} = this.state;
+        let item = s.val();
+        item["key"] = s.key;
+        const datas = data.filter(i=>i.key!==item.key);
+        this.setState({data:datas});
+      })
   }
 
   openForm = () => {
-    this.setState({openForm:true});
-  };
+      this.setState({openForm:true});
+    };
 
   closeForm = () => {
     this.setState({openForm:false});
@@ -63,20 +66,9 @@ class TableContainer5 extends Component{
     console.log(this.state.newItem)
   };
 
-  handleDate = (n, date) => {
-    console.log(date);
-    let newItem = this.state.newItem;
-    newItem['fecha'] = date;
-    this.setState({newItem});
-    console.log(this.state.newItem);
-  };
-
   saveItem = () => {
     let newItem = this.state.newItem;
-    newItem['captura'] = Date.now();
-    newItem["fecha"] = Date.parse(newItem["fecha"]);
-    this.closeForm();
-    firebase.database().ref('torneocinco')
+    firebase.database().ref('CopaAfricana')
       .push(newItem)
       .then(r=>message.success("Se ha guardado con éxito"))
       .catch(e=>message.error("Algo malo pasó, no se pudo guardar"));
@@ -99,9 +91,27 @@ class TableContainer5 extends Component{
         <div className='torneo'>
           <h2>Torneo Copa Africana</h2>
           <ShowTable loading={loading} data={data} />
-          <FloatingActionButton style={styles.float} onClick={this.openForm}>
+          <FloatingActionButton
+            style={styles.float}
+            onClick={this.openForm}
+          >
             <ContentAdd />
           </FloatingActionButton>
+          <Dialog
+            contentStyle={{width:350}}
+            title="Agregar nuevo"
+            actions={actions}
+            modal={false}
+            open={openForm}
+            onRequestClose={this.closeForm}
+          >
+          <TorneoForm
+            handleDate={this.handleDate}
+            newItem={newItem}
+            handleSub={this.handleSub}
+            handleTipo={this.handleTipo}
+            onChange={this.onChange} />
+          </Dialog>
         </div>
       </div>
     );
